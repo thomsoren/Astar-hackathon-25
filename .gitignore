@@ -1,4 +1,8 @@
 .DS_Store
 .env
 
-Data/
+data/
+
+venv/
+
+data/yolo_dataset/

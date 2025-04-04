@@ -1,117 +1,89 @@
-﻿import cv2
+﻿﻿# -*- coding: utf-8 -*-
+import cv2
 import os
+import yaml
+from pathlib import Path
 
 def yolo_to_xyxy(x_center, y_center, width, height, img_w, img_h):
-    """
-    Converts YOLO format (x_center, y_center, width, height) 
-    to coordinates: (x1, y1, x2, y2). 
-    All YOLO values are assumed to be normalized [0,1].
-    """
-    # Convert normalized coords to absolute pixel values
+    """Convert YOLO format to bounding box coordinates"""
     x_center_abs = x_center * img_w
     y_center_abs = y_center * img_h
     w_abs = width * img_w
     h_abs = height * img_h
-
-    # Compute top-left and bottom-right
     x1 = int(x_center_abs - (w_abs / 2))
     y1 = int(y_center_abs - (h_abs / 2))
     x2 = int(x_center_abs + (w_abs / 2))
     y2 = int(y_center_abs + (h_abs / 2))
-
     return x1, y1, x2, y2
 
-def draw_bounding_boxes_from_yolo(image_path, label_path):
-    """
-    Given an image and its corresponding YOLO label file, 
-    draw bounding boxes on the image and display it.
-    """
-    image = cv2.imread(image_path, cv2.IMREAD_COLOR)
+def load_class_names(yaml_path):
+    """Load class names from YOLO data.yaml file"""
+    with open(yaml_path, 'r') as f:
+        data = yaml.safe_load(f)
+    return data['names']
+
+def draw_bounding_boxes(image_path, label_path, class_names):
+    """Draw bounding boxes with class names on image"""
+    image = cv2.imread(image_path)
     if image is None:
         print(f"Error loading image: {image_path}")
         return
 
-    h, w, _ = image.shape
-
-    # If there's no label file, just show the image without boxes
+    h, w = image.shape[:2]
+    
     if not os.path.exists(label_path):
-        print(f"No label file found for {image_path}. Showing image without boxes.")
-        cv2.namedWindow("Detected Objects", cv2.WINDOW_NORMAL)
-        cv2.imshow("Detected Objects", image)
+        print(f"No label file found for {image_path}")
+        cv2.imshow("Image", image)
         cv2.waitKey(0)
-        cv2.destroyAllWindows()
         return
 
-    # Read YOLO label lines
     with open(label_path, 'r') as f:
         lines = f.readlines()
 
     for line in lines:
-        line = line.strip()
-        if not line:
-            continue
-
-        # Usually YOLO line format: class x_center y_center width height
-        parts = line.split()
+        parts = line.strip().split()
         if len(parts) != 5:
-            print(f"Skipping malformed line: {line}")
             continue
 
-        cls_id = parts[0]
-        x_center = float(parts[1])
-        y_center = float(parts[2])
-        box_width = float(parts[3])
-        box_height = float(parts[4])
-
-        x1, y1, x2, y2 = yolo_to_xyxy(x_center, y_center, box_width, box_height, w, h)
-
-        # Ensure bounding boxes are within image boundaries
-        x1 = max(0, x1)
-        y1 = max(0, y1)
-        x2 = min(w - 1, x2)
-        y2 = min(h - 1, y2)
-
-        # Draw bounding box (green)
-        cv2.rectangle(image, (x1, y1), (x2, y2), (0, 255, 0), 2)
-
-        # Put the class label above the box
-        cv2.putText(
-            image, 
-            f"Class {cls_id}", 
-            (x1, max(0, y1 - 5)), 
-            cv2.FONT_HERSHEY_SIMPLEX, 
-            0.5, 
-            (0, 255, 0), 
-            2
+        cls_id, x, y, bw, bh = parts
+        x1, y1, x2, y2 = yolo_to_xyxy(
+            float(x), float(y), float(bw), float(bh), w, h
         )
 
-    # Create a resizable window to better view the image
-    cv2.namedWindow("Detected Objects", cv2.WINDOW_NORMAL)
+        # Draw bounding box
+        cv2.rectangle(image, (x1, y1), (x2, y2), (0, 255, 0), 2)
+        
+        # Display class name instead of just class ID
+        class_name = class_names.get(int(cls_id), f"Class {cls_id}")
+        cv2.putText(
+            image, class_name, (x1, y1 - 5),
+            cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2
+        )
+
     cv2.imshow("Detected Objects", image)
     cv2.waitKey(0)
     cv2.destroyAllWindows()
 
 def main():
-    # Change these paths to your actual image/label paths
-    IMAGES_FOLDER = r"/Users/nybruker/Documents/Hackaton/DNV_Hackathon_gruppe2/data/images/train"
-    LABELS_FOLDER = r"/Users/nybruker/Documents/Hackaton/DNV_Hackathon_gruppe2/data/labels/train"
+    # Paths relative to script location
+    script_dir = Path(__file__).parent
+    dataset_root = script_dir.parent.parent.parent / "data" / "yolo_dataset"
+    
+    images_folder = dataset_root / "images" / "train"
+    labels_folder = dataset_root / "labels" / "train"
+    yaml_config = dataset_root / "data.yaml"
 
-    # Get list of all images in the folder (filter by extension if needed)
-    valid_exts = (".jpg", ".jpeg", ".png")
-    image_files = [f for f in os.listdir(IMAGES_FOLDER) 
-                   if f.lower().endswith(valid_exts)]
+    class_names = load_class_names(yaml_config)
 
-    for image_file in image_files:
-        # Full path to the image
-        image_path = os.path.join(IMAGES_FOLDER, image_file)
+    for img_file in os.listdir(images_folder):
+        if not img_file.lower().endswith(('.png', '.jpg', '.jpeg')):
+            continue
 
-        # Label file has the same name, but with .txt extension
-        # (if you store them differently, adjust here)
-        label_basename = os.path.splitext(image_file)[0] + ".txt"
-        label_path = os.path.join(LABELS_FOLDER, label_basename)
+        img_path = images_folder / img_file
+        label_path = labels_folder / f"{Path(img_file).stem}.txt"
 
-        print(f"Processing image: {image_file}")
-        draw_bounding_boxes_from_yolo(image_path, label_path)
+        print(f"Processing {img_file}...")
+        draw_bounding_boxes(img_path, label_path, class_names)
 
 if __name__ == "__main__":
     main()
