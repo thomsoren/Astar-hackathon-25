@@ -1,12 +1,8 @@
 ﻿# ===================================
 # 1. Installs and Imports
 # ===================================
-!pip install ultralytics pyyaml wandb optuna --quiet
-
 import os
-import time
 import yaml
-import wandb
 import optuna
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -16,7 +12,6 @@ from ultralytics import YOLO
 from ultralytics.engine.results import Results
 import torch
 
-%matplotlib inline
 torch.cuda.empty_cache()
 
 # ===================================
