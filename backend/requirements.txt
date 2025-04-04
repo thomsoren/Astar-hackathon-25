@@ -1,0 +1,4 @@
+gradio==4.26.0
+pandas
+numpy
+ultralytics
