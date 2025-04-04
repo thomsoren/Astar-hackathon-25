@@ -25,20 +25,11 @@ with open(CONFIG_PATH, "r") as f:
 ROOT = os.getcwd()
 
 # Extract configuration values
-MODEL = config["model"]
 EPOCHS = config["epochs"]
 BATCH_SIZE = config["batch_size"]
 IMG_SIZE = config["img_size"]
 DATA_YAML = config["data_yaml"]
 TEST_IMAGES_DIR = config["test_images_dir"]
-# PATIENCE = config["patience"]
-
-# W&B Settings
-USE_WANDB = config["use_wandb"]
-WANDB_PROJECT = config["wandb_project"]
-WANDB_TEAM = config.get("wandb_team", None)
-WANDB_RUN_NAME = config["wandb_run_name"]
-
 # # ===================================
 # # 2. Define Optuna Optimization
 # # ===================================
@@ -55,7 +46,7 @@ def objective(trial):
     pose = trial.suggest_float("pose", 8.0, 15.0)   # around 12.0
 
     # Initialize YOLO model
-    model = YOLO(MODEL)
+    model = YOLO("yolo11m.pt")
 
     # Train with hyperparameters
     results = model.train(
@@ -93,5 +84,6 @@ study.optimize(objective, n_trials=20)  # Run 10 trials
 # Get best trial results
 best_trial = study.best_trial
 best_params = best_trial.params
+
 print(f"Best Trial: {best_trial.number}")
 print(f"Best Hyperparameters: {best_params}")

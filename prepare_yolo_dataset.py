@@ -5,7 +5,7 @@ import shutil
 from pathlib import Path
 
 # Hardcoded configuration
-SOURCE_DIR = "data/image"  # Input directory with product folders
+SOURCE_DIR = "data"  # Input directory with product folders
 TARGET_DIR = "DELIVERY/PROBLEM1/data/"  # Output directory (no trailing slash)
 
 PLU_MAPPING_FILE = "plu_mapping.json"  # PLU mapping file
