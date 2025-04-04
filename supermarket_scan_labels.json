@@ -1,0 +1,207 @@
+{
+  "database": {
+    "Nesten alle varer sakte tempo 480P.mp4": {
+      "annotation": [
+        {
+          "id": "001",
+          "segment": [
+            0.0,
+            0.0
+          ],
+          "label": "label",
+          "holding_product": {
+            "possible_labels": [
+              "hold product",
+              "not holding product"
+            ]
+          },
+          "scan_light": {
+            "possible_labels": [
+              "scan light on",
+              "scan light off"
+            ]
+          }
+        }
+      ],
+      "video_url": "videos/Nesten alle varer sakte tempo 480P.mp4",
+      "start": 0.0,
+      "end": "VIDEO_DURATION",
+      "duration": "VIDEO_DURATION",
+      "subset": "training"
+    },
+    "Noen få enkle varer 480P.mp4": {
+      "annotation": [
+        {
+          "id": "001",
+          "segment": [
+            0.0,
+            0.0
+          ], "label": "label",
+  
+          "holding_product": {
+            "possible_labels": [
+              "hold product",
+              "not holding product"
+            ]
+          },
+          "scan_light": {
+            "possible_labels": [
+              "scan light on",
+              "scan light off"
+            ]
+          }
+        }
+      ],
+      "video_url": "videos/Noen få enkle varer 480P.mp4",
+      "start": 0.0,
+      "end": "VIDEO_DURATION",
+      "duration": "VIDEO_DURATION",
+      "subset": "training"
+    },
+    "Noen få enkle varer 720P.mp4": {
+      "annotation": [
+        {
+          "id": "001",
+          "segment": [
+            0.0,
+            0.0
+          ], "label": "label",
+
+          "holding_product": {
+            "possible_labels": [
+              "hold product",
+              "not holding product"
+            ]
+          },
+          "scan_light": {
+            "possible_labels": [
+              "scan light on",
+              "scan light off"
+            ]
+          }
+        }
+      ],
+      "video_url": "videos/Noen få enkle varer 720P.mp4",
+      "start": 0.0,
+      "end": "VIDEO_DURATION",
+      "duration": "VIDEO_DURATION",
+      "subset": "training"
+    },
+    "Noen få enkle varer 1080P.mp4": {
+      "annotation": [
+        {
+          "id": "001",
+          "segment": [
+            0.0,
+            0.0
+          ], "label": "label",
+
+          "holding_product": {
+            "possible_labels": [
+              "hold product",
+              "not holding product"
+            ]
+          },
+          "scan_light": {
+            "possible_labels": [
+              "scan light on",
+              "scan light off"
+            ]
+          }
+        }
+      ],
+      "video_url": "videos/Noen få enkle varer 1080P.mp4",
+      "start": 0.0,
+      "end": "VIDEO_DURATION",
+      "duration": "VIDEO_DURATION",
+      "subset": "training"
+    },
+    "Varer dobbelt 480P.mp4": {
+      "annotation": [
+        {
+          "id": "001",
+          "segment": [
+            0.0,
+            0.0
+          ], "label": "label",
+
+          "holding_product": {
+            "possible_labels": [
+              "hold product",
+              "not holding product"
+            ]
+          },
+          "scan_light": {
+            "possible_labels": [
+              "scan light on",
+              "scan light off"
+            ]
+          }
+        }
+      ],
+      "video_url": "videos/Varer dobbelt 480P.mp4",
+      "start": 0.0,
+      "end": "VIDEO_DURATION",
+      "duration": "VIDEO_DURATION",
+      "subset": "training"
+    },
+    "Varer med dobbelt opp 720P.mp4": {
+      "annotation": [
+        {
+          "id": "001",
+          "segment": [
+            0.0,
+            0.0
+          ], "label": "label",
+
+          "holding_product": {
+            "possible_labels": [
+              "hold product",
+              "not holding product"
+            ]
+          },
+          "scan_light": {
+            "possible_labels": [
+              "scan light on",
+              "scan light off"
+            ]
+          }
+        }
+      ],
+      "video_url": "videos/Varer med dobbelt opp 720P.mp4",
+      "start": 0.0,
+      "end": "VIDEO_DURATION",
+      "duration": "VIDEO_DURATION",
+      "subset": "training"
+    },
+    "Varer med dobbelt opp 1080P.mp4": {
+      "annotation": [
+        {
+          "id": "001",
+          "segment": [
+            0.0,
+            0.0
+          ], "label": "label",
+
+          "holding_product": {
+            "possible_labels": [
+              "hold product",
+              "not holding product"
+            ]
+          },
+          "scan_light": {
+            "possible_labels": [
+              "scan light on",
+              "scan light off"
+            ]
+          }
+        }
+      ],
+      "video_url": "videos/Varer med dobbelt opp 1080P.mp4",
+      "start": 0.0,
+      "end": "VIDEO_DURATION",
+      "duration": "VIDEO_DURATION",
+      "subset": "training"
+    }
+  }
+}

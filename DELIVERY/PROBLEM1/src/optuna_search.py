@@ -68,12 +68,14 @@ def objective(trial):
         fraction=0.3
     )
 
-    # Get validation mAP50-95 score (higher is better)
-    val_metrics = model.val(data=DATA_YAML, split="val", imgsz=IMG_SIZE)
-    val_map50_95 = float(val_metrics.box.map)
+    metrics = model.val(data=config["data_yaml"], split="val", imgsz=config["img_size"])
     
-
-    return val_map50_95  # Optuna maximizes this
+    mAP = metrics.box.map       # mAP50-95
+    mAP50 = metrics.box.map50     # mAP50
+    mAP75 = metrics.box.map75     # mAP75
+    # Compute a composite score (adjust weights as needed)
+    composite_score = (mAP + mAP50 + mAP75) / 3
+    return composite_score
 
 # # ===================================
 # # 3. Run Optuna Hyperparameter Search
