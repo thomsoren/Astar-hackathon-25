@@ -1,6 +1,6 @@
 ﻿model: "yolo11m.pt"  # Options: yolo11n.pt, yolo11s.pt, yolo11m.pt, yolo11l.pt, yolo11x.pt"
-epochs: 5
-batch_size: 4
+epochs: 2
+batch_size: 2
 img_size: 640
 data_yaml: "data/dataset.yaml"
 test_images_dir: "data/images/test"
