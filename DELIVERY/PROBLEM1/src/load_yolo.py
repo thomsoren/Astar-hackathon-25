@@ -6,6 +6,9 @@ import yaml
 import pandas as pd
 from ultralytics import YOLO
 from ultralytics.engine.results import Results
+import time
+import matplotlib.pyplot as plt
+import seaborn as sns
     
 import torch
 torch.cuda.empty_cache() 
@@ -67,3 +70,57 @@ results = model.predict(
 # Visualize the results
 for result in results:
    result.show()
+
+# ===================================
+# 6. Visualize Training Progress
+# ===================================
+# This code reads the CSV logged by YOLO and creates custom plots
+
+# Path to the YOLO results CSV (adjust if needed)
+results_csv = os.path.join(ROOT, "runs", "detect", "train", "results.csv")
+
+# (Optional) Wait for results.csv to exist (avoid FileNotFoundError)
+while not os.path.exists(results_csv):
+    print("Waiting for results.csv to be generated...")
+    time.sleep(10)
+
+# Read CSV
+df = pd.read_csv(results_csv)
+df.columns = df.columns.str.strip()  # Remove any leading/trailing spaces
+
+# Create subplots using seaborn
+fig, axs = plt.subplots(nrows=5, ncols=2, figsize=(15, 15))
+
+# Plot columns
+sns.lineplot(x='epoch', y='train/box_loss', data=df, ax=axs[0,0])
+sns.lineplot(x='epoch', y='train/cls_loss', data=df, ax=axs[0,1])
+sns.lineplot(x='epoch', y='train/dfl_loss', data=df, ax=axs[1,0])
+sns.lineplot(x='epoch', y='metrics/precision(B)', data=df, ax=axs[1,1])
+sns.lineplot(x='epoch', y='metrics/recall(B)', data=df, ax=axs[2,0])
+sns.lineplot(x='epoch', y='metrics/mAP50(B)', data=df, ax=axs[2,1])
+sns.lineplot(x='epoch', y='metrics/mAP50-95(B)', data=df, ax=axs[3,0])
+sns.lineplot(x='epoch', y='val/box_loss', data=df, ax=axs[3,1])
+sns.lineplot(x='epoch', y='val/cls_loss', data=df, ax=axs[4,0])
+sns.lineplot(x='epoch', y='val/dfl_loss', data=df, ax=axs[4,1])
+
+# Set subplot titles
+axs[0,0].set(title='Train Box Loss')
+axs[0,1].set(title='Train Class Loss')
+axs[1,0].set(title='Train DFL Loss')
+axs[1,1].set(title='Metrics Precision (B)')
+axs[2,0].set(title='Metrics Recall (B)')
+axs[2,1].set(title='Metrics mAP50 (B)')
+axs[3,0].set(title='Metrics mAP50-95 (B)')
+axs[3,1].set(title='Validation Box Loss')
+axs[4,0].set(title='Validation Class Loss')
+axs[4,1].set(title='Validation DFL Loss')
+
+# Add a suptitle
+plt.suptitle('Training Metrics and Loss', fontsize=24)
+
+# Adjust layout to make space for suptitle
+plt.subplots_adjust(top=0.85)
+plt.tight_layout()
+
+# Show the plot
+plt.show()
