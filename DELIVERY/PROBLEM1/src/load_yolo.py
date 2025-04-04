@@ -28,12 +28,6 @@ IMG_SIZE = config["img_size"]
 DATA_YAML = config["data_yaml"]
 TEST_IMAGES_DIR = config["test_images_dir"]
 
-# W&B Settings
-USE_WANDB = config["use_wandb"]
-WANDB_PROJECT = config["wandb_project"]
-WANDB_TEAM = config.get("wandb_team", None)
-WANDB_RUN_NAME = config["wandb_run_name"]
-
 # ===================================
 # 3. Load Pretrained Model
 # ===================================

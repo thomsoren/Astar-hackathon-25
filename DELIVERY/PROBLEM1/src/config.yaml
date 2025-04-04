@@ -1,0 +1,10 @@
+﻿model: "yolo11s.pt"  # Options: yolo11n.pt, yolo11s.pt, yolo11m.pt, yolo11l.pt, yolo11x.pt"
+epochs: 5
+batch_size: 4
+img_size: [1088, 1920]
+data_yaml: "data/dataset.yaml"
+test_images_dir: "data/images/test"
+experiment_name: "yolov11n_hurtigruten"
+use_wandb: false  # Set to true to enable logging
+wandb_project: "DNV Hackathon"
+wandb_run_name: "yolo11s-experiment-1"
