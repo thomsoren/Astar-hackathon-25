@@ -6,7 +6,7 @@ from pathlib import Path
 
 # Hardcoded configuration
 SOURCE_DIR = "data"  # Input directory with product folders
-TARGET_DIR = "DELIVERY/PROBLEM1/data/"  # Output directory (no trailing slash)
+TARGET_DIR = "DELIVERY/PROBLEM1/src/data/"  # Output directory (no trailing slash)
 
 PLU_MAPPING_FILE = "plu_mapping.json"  # PLU mapping file
 SPLIT_RATIOS = {'train': 0.7, 'val': 0.2, 'test': 0.1}  # Train/val/test split
@@ -89,9 +89,9 @@ def process_dataset(source_dir, target_dir, plu_mapping, plu_to_index, split_rat
 def create_yaml_config(target_dir, plu_mapping):
     """Create YOLO dataset configuration file"""
     yaml_content = f"""path: ../
-train: images/train
-val: images/val
-test: images/test
+train: C:/Users/light/Documents/ntnu/cogito/Astar-hackathon-25/DELIVERY/PROBLEM1/src/images/train
+val: C:/Users/light/Documents/ntnu/cogito/Astar-hackathon-25/DELIVERY/PROBLEM1/src/images/val
+test: C:/Users/light/Documents/ntnu/cogito/Astar-hackathon-25/DELIVERY/PROBLEM1/src/images/test
 nc: {len(plu_mapping)}
 names:
 """
