@@ -2,3 +2,4 @@ numpy==2.1.1
 opencv-contrib-python
 ultralytics==11.0.0
 torch>=2.0.1
+optuna

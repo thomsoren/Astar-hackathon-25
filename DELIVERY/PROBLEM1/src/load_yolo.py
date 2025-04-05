@@ -40,13 +40,23 @@ model = YOLO('yolo11m.pt')
 # 4. Train the Model
 # ===================================
 # Train
-train_results = model.train(
-   data=DATA_YAML,
-   epochs=EPOCHS,
-   imgsz=IMG_SIZE,
-   batch=BATCH_SIZE,
-   plots=True,
-   amp=True
+
+model.train(
+    data=DATA_YAML,
+    epochs=400,
+    imgsz=IMG_SIZE,
+    batch=BATCH_SIZE,
+    name="best_model_lol",
+    plots=True,
+    amp=True,
+    patience=20,
+    lr0=0.0010437818703644063,
+    weight_decay=0.00004099532698065393,
+    box=7.18752296146375,
+    cls=0.34256017682754214,
+    dfl=1.5887712944378107,
+    pose=8.392640010346742,
+    cos_lr=True
 )
 
 # ===================================
