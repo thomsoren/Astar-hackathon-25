@@ -7,7 +7,7 @@ from ultralytics import YOLO
 from collections import defaultdict
 
 # --- Configuration ---
-MODEL_PATH = '../../trained_models/best.pt' # Relative path from main.py
+MODEL_PATH = '../../trained_models/weights/best.pt' # Relative path from main.py
 VIDEO_DIR = '../../data/videos'           # Relative path from main.py
 OUTPUT_DIR = 'output'                     # Relative path from main.py
 MAX_DISTANCE_THRESHOLD = 50               # Max pixel distance to match a detection to a track
