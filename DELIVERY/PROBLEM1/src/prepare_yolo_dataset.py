@@ -5,8 +5,8 @@ import shutil
 from pathlib import Path
 
 # Hardcoded configuration
-SOURCE_DIR = "data/images"  # Input directory with product folders
-TARGET_DIR = "DELIVERY/PROBLEM1/src/data/"  # Output directory (no trailing slash)
+SOURCE_DIR = "../data"  # Input directory with product folders
+TARGET_DIR = "data/"  # Output directory (no trailing slash)
 
 PLU_MAPPING_FILE = "plu_mapping.json"  # PLU mapping file
 SPLIT_RATIOS = {"train": 0.7, "val": 0.2, "test": 0.1}  # Train/val/test split
