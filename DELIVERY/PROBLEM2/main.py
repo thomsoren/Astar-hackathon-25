@@ -28,7 +28,7 @@ def euclidean_distance(point1, point2):
 # --- Tracking Logic ---
 class Tracker:
     def __init__(self, max_distance, max_unseen):
-        # Store track_id -> {coords: list, last_pos: tuple, last_bbox: tuple, unseen_frames: int, active: bool}
+        # Store track_id -> {coords: list, last_pos: tuple, last_bbox: tuple, unseen_frames: int, active: bool, class_id: int, class_name: str}
         self.tracks = {}
         self.next_track_id = 0
         self.max_distance = max_distance
@@ -46,25 +46,25 @@ class Tracker:
              self.track_colors[track_id] = tuple(np.random.randint(0, 255, 3).tolist())
         return self.track_colors[track_id]
 
-    def update(self, detections_with_boxes, frame_number):
+    def update(self, detections_with_boxes_and_classes, frame_number):
         """
         Updates tracks based on new detections.
-        detections_with_boxes: list of tuples [(center_x, center_y), (x1, y1, x2, y2)]
+        detections_with_boxes_and_classes: list of tuples [(center_x, center_y), (x1, y1, x2, y2), class_id, class_name]
         """
         active_tracks = self._get_active_tracks()
         matched_track_ids = set()
         used_detection_indices = set()
 
         # Try to match detections to existing active tracks
-        if detections_with_boxes and active_tracks:
+        if detections_with_boxes_and_classes and active_tracks:
             # Build cost matrix (distances between centers)
-            cost_matrix = np.full((len(active_tracks), len(detections_with_boxes)), float('inf'))
+            cost_matrix = np.full((len(active_tracks), len(detections_with_boxes_and_classes)), float('inf'))
             track_ids = list(active_tracks.keys())
-            detection_centers = [det[0] for det in detections_with_boxes] # Extract centers
+            detection_centers = [det[0] for det in detections_with_boxes_and_classes] # Extract centers
 
             for i, track_id in enumerate(track_ids):
                 track_pos = active_tracks[track_id]['last_pos']
-                for j, det_center in enumerate(detection_centers):
+                for j, (det_center, _, _, _) in enumerate(detections_with_boxes_and_classes):
                     dist = euclidean_distance(track_pos, det_center)
                     if dist < self.max_distance:
                         cost_matrix[i, j] = dist
@@ -81,11 +81,13 @@ class Tracker:
             for dist, track_id, det_idx in matches:
                 if track_id not in matched_track_ids and det_idx not in used_detection_indices:
                     # Match found
-                    det_center, det_bbox = detections_with_boxes[det_idx]
+                    det_center, det_bbox, class_id, class_name = detections_with_boxes_and_classes[det_idx]
                     self.tracks[track_id]['coords'].append([frame_number, det_center[0], det_center[1]])
                     self.tracks[track_id]['last_pos'] = det_center
                     self.tracks[track_id]['last_bbox'] = det_bbox # Store the bbox
                     self.tracks[track_id]['unseen_frames'] = 0
+                    self.tracks[track_id]['class_id'] = class_id # Update class info
+                    self.tracks[track_id]['class_name'] = class_name
                     matched_track_ids.add(track_id)
                     used_detection_indices.add(det_idx)
 
@@ -99,7 +101,7 @@ class Tracker:
                     track['last_bbox'] = None # Clear bbox when inactive
 
         # Handle unmatched detections (create new tracks)
-        for i, (det_center, det_bbox) in enumerate(detections_with_boxes):
+        for i, (det_center, det_bbox, class_id, class_name) in enumerate(detections_with_boxes_and_classes):
             if i not in used_detection_indices:
                 new_id = self.next_track_id
                 self.tracks[new_id] = {
@@ -107,7 +109,9 @@ class Tracker:
                     'last_pos': det_center,
                     'last_bbox': det_bbox, # Store initial bbox
                     'unseen_frames': 0,
-                    'active': True
+                    'active': True,
+                    'class_id': class_id,
+                    'class_name': class_name
                 }
                 self.next_track_id += 1
 
@@ -138,18 +142,20 @@ def process_video(video_path, model, output_file):
         # Perform YOLO detection
         results = model.predict(frame, conf=CONFIDENCE_THRESHOLD, verbose=False)
 
-        detections_with_boxes = []
+        detections_with_boxes_and_classes = []
         current_bboxes = [] # Store bboxes for drawing later if needed
         if results and results[0].boxes:
             for box in results[0].boxes:
                 if box.xyxy is not None and len(box.xyxy) > 0:
                     bbox = box.xyxy[0].cpu().numpy().astype(int) # Use int for drawing
                     center = calculate_center(bbox)
-                    detections_with_boxes.append((center, tuple(bbox))) # Store center and bbox
+                    class_id = int(box.cls[0].item())
+                    class_name = model.names[class_id]
+                    detections_with_boxes_and_classes.append((center, tuple(bbox), class_id, class_name)) # Store center, bbox, and class info
                     current_bboxes.append(tuple(bbox))
 
         # Update tracker
-        tracker.update(detections_with_boxes, frame_number)
+        tracker.update(detections_with_boxes_and_classes, frame_number)
 
         # --- Visualization ---
         if VISUALIZE:
@@ -162,8 +168,8 @@ def process_video(video_path, model, output_file):
                     color = tracker._get_color(track_id)
                     # Draw bounding box
                     cv2.rectangle(vis_frame, (x1, y1), (x2, y2), color, 2)
-                    # Draw track ID
-                    label = f"ID: {track_id}"
+                    # Draw track ID and class name
+                    label = f"ID: {track_id} - {track_data['class_name']}"
                     cv2.putText(vis_frame, label, (x1, y1 - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, color, 2)
                     # Draw center point (optional)
                     # center_x, center_y = track_data['last_pos']
