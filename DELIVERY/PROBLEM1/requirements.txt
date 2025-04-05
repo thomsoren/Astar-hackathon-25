@@ -3,3 +3,8 @@ opencv-contrib-python
 ultralytics==11.0.0
 torch>=2.0.1
 optuna
+pyyaml>=6.0.0
+pandas>=2.0.0
+matplotlib>=3.5.0
+seaborn>=0.12.0
+albumentations>=1.3.0
