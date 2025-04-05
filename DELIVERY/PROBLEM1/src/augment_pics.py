@@ -2,29 +2,31 @@
 import cv2
 import albumentations as A
 
-# 1. Define where your original images and labels are
-IMG_DIR = "data/images/train"
-LABEL_DIR = "data/labels/train"
+# 1. Define paths relative to script location
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+IMG_DIR = os.path.join(SCRIPT_DIR, "data", "images", "train")
+LABEL_DIR = os.path.join(SCRIPT_DIR, "data", "labels", "train")
 
-# 2. Define where augmented images and labels will be saved
-AUG_IMG_DIR = "data/images/train"
-AUG_LABEL_DIR = "data/labels/train"
+# 2. Define where augmented files will be saved
+AUG_IMG_DIR = os.path.join(SCRIPT_DIR, "data", "images", "train")
+AUG_LABEL_DIR = os.path.join(SCRIPT_DIR, "data", "labels", "train")
 
-os.makedirs(AUG_IMG_DIR, exist_ok=True)
-os.makedirs(AUG_LABEL_DIR, exist_ok=True)
+# Create directories if they don't exist
+for dir_path in [IMG_DIR, LABEL_DIR, AUG_IMG_DIR, AUG_LABEL_DIR]:
+    os.makedirs(dir_path, exist_ok=True)
 
 # 3. Define your augmentation pipeline
 #    (Adjust probabilities and parameters as needed)
 augmentor = A.Compose([
     A.HorizontalFlip(p=0.5),
     A.RandomBrightnessContrast(p=0.3),
-    A.ShiftScaleRotate(shift_limit=0.05, scale_limit=0.2, rotate_limit=20, p=0.5),
+    A.ShiftScaleRotate(shift_limit=0.05, scale_limit=0.1, rotate_limit=10, p=0.5),
 ],
     bbox_params=A.BboxParams(
         format='yolo',        # YOLO format: [class, x_center, y_center, w, h]
         label_fields=['class_labels'],
         min_area=0,           # remove bboxes smaller than this area (in pixels)
-        min_visibility=0.0,   # remove bboxes if < this fraction of area remains
+        min_visibility=0.1,   # remove bboxes if < this fraction of area remains
     )
 )
 
@@ -120,4 +122,4 @@ def augment_dataset(num_aug=5):
 
 if __name__ == "__main__":
     # Create 5 augmented images per original
-    augment_dataset(num_aug=5)
+    augment_dataset(num_aug=2)
