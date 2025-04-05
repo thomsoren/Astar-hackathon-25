@@ -6,5 +6,5 @@ data_yaml: "data/dataset.yaml"
 test_images_dir: "data/images/test"
 experiment_name: "yolov11n_hurtigruten"
 use_wandb: false  # Set to true to enable logging
-wandb_project: "DNV Hackathon"
+wandb_project: "A star hackaton"
 wandb_run_name: "yolo11s-experiment-1"
