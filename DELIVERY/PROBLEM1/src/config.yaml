@@ -1,10 +1,7 @@
 ﻿﻿model: "yolo11s.pt"  # Using smaller v11s model for efficiency
-epochs: 2
-batch_size: 2
-img_size: 640
+epochs: 200
+batch_size: 8
+img_size: 1080
 data_yaml: "DELIVERY/PROBLEM1/src/data/dataset.yaml"
 test_images_dir: "DELIVERY/PROBLEM1/src/data/images/test"
-experiment_name: "yolov11n_hurtigruten"
-use_wandb: false  # Set to true to enable logging
-wandb_project: "A star hackaton"
-wandb_run_name: "yolo11s-experiment-1"
+experiment_name: "A star hackaton"

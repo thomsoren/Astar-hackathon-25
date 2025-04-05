@@ -1,4 +1,4 @@
-﻿# ===================================
+﻿﻿# ===================================
 # 1. Installs and Imports
 # ===================================
 import os
@@ -7,7 +7,6 @@ import optuna
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-
 from ultralytics import YOLO
 from ultralytics.engine.results import Results
 import torch
@@ -57,7 +56,8 @@ def objective(trial):
         name=f"optuna_trial_{trial.number}",
         plots=False,
         amp=True,
-        # patience=PATIENCE,  # Early stopping
+    # Early stopping parameter (uncomment if needed)
+    # patience=10,  
         lr0=lr0,
         weight_decay=weight_decay,
         cos_lr=True,
@@ -81,7 +81,7 @@ def objective(trial):
 # # 3. Run Optuna Hyperparameter Search
 # # ===================================
 study = optuna.create_study(direction="maximize")
-study.optimize(objective, n_trials=20)  # Run 10 trials
+study.optimize(objective, n_trials=75)  # Run 10 trials
 
 # Get best trial results
 best_trial = study.best_trial
