@@ -63,7 +63,7 @@ def main(opt):
     # ------------------------------------------------------
     print(f"[INFO] Loading YOLO model from: {opt.weights}")
     # Resolve weights path relative to script location
-    weights_path = os.path.join(os.path.dirname(__file__), '../model/yolo/best.pt')
+    weights_path = os.path.join(os.path.dirname(__file__), '../../model/yolo/best.pt')
     if not os.path.exists(weights_path):
         print(f"[ERROR] Model weights not found at: {weights_path}")
         sys.exit(1)
