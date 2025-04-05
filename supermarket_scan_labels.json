@@ -3,12 +3,893 @@
     "Nesten alle varer sakte tempo 480P.mp4": {
       "annotation": [
         {
-          "id": "001",
           "segment": [
             0.0,
-            0.0
+            0.2
           ],
-          "label": "label",
+          "label": "none",
+          "holding_product": {
+            "possible_labels": [
+              "not holding product"
+            ]
+          },
+          "scan_light": {
+            "possible_labels": [
+              "scan light on"
+            ]
+          }
+        }
+
+        {
+          "segment": [
+            0.3,
+            0.5
+          ],
+          "label": "Kvikk Lunsj",
+          "holding_product": {
+            "possible_labels": [
+              "hold product"
+            ]
+          },
+          "scan_light": {
+            "possible_labels": [
+              "scan light on"
+            ]
+          }
+        }
+
+        {
+          "segment": [
+            0.5,
+            0.5
+          ],
+          "label": "Kvikk Lunsj",
+          "holding_product": {
+            "possible_labels": [
+              "hold product"
+            ]
+          },
+          "scan_light": {
+            "possible_labels": [
+              "scan light off"
+            ]
+          }
+        }
+
+        {
+          "segment": [
+            0.6,
+            0.7
+          ],
+          "label": "Kvikk Lunsj",
+          "holding_product": {
+            "possible_labels": [
+              "hold product"
+            ]
+          },
+          "scan_light": {
+            "possible_labels": [
+              "scan light on"
+            ]
+          }
+        }
+
+        {
+          "segment": [
+            0.7,
+            0.8
+          ],
+          "label": "none",
+          "holding_product": {
+            "possible_labels": [
+              "not holding product"
+            ]
+          },
+          "scan_light": {
+            "possible_labels": [
+              "scan light on"
+            ]
+          }
+        }
+
+        {
+          "segment": [
+            0.9,
+            0.10
+          ],
+          "label": "Pepsi",
+          "holding_product": {
+            "possible_labels": [
+              "hold product"
+            ]
+          },
+          "scan_light": {
+            "possible_labels": [
+              "scan light on"
+            ]
+          }
+        }
+
+        {
+          "segment": [
+            0.10,
+            0.12
+          ],
+          "label": "Pepsi",
+          "holding_product": {
+            "possible_labels": [
+              "hold product"
+            ]
+          },
+          "scan_light": {
+            "possible_labels": [
+              "scan light off"
+            ]
+          }
+        }
+
+        {
+          "segment": [
+            0.13,
+            0.14
+          ],
+          "label": "Pepsi",
+          "holding_product": {
+            "possible_labels": [
+              "hold product"
+            ]
+          },
+          "scan_light": {
+            "possible_labels": [
+              "scan light on"
+            ]
+          }
+        }
+
+        {
+          "segment": [
+            0.14,
+            0.16
+          ],
+          "label": "none",
+          "holding_product": {
+            "possible_labels": [
+              "not holding product"
+            ]
+          },
+          "scan_light": {
+            "possible_labels": [
+              "scan light on"
+            ]
+          }
+        }
+
+        {
+          "segment": [
+            0.16,
+            0.18
+          ],
+          "label": "Prior Frokostegg",
+          "holding_product": {
+            "possible_labels": [
+              "hold product"
+            ]
+          },
+          "scan_light": {
+            "possible_labels": [
+              "scan light on"
+            ]
+          }
+        }
+
+        {
+          "segment": [
+            0.19,
+            0.19
+          ],
+          "label": "Prior Frokostegg",
+          "holding_product": {
+            "possible_labels": [
+              "hold product"
+            ]
+          },
+          "scan_light": {
+            "possible_labels": [
+              "scan light off"
+            ]
+          }
+        }
+
+        {
+          "segment": [
+            0.20,
+            0.21
+          ],
+          "label": "Prior Frokostegg",
+          "holding_product": {
+            "possible_labels": [
+              "hold product"
+            ]
+          },
+          "scan_light": {
+            "possible_labels": [
+              "scan light on"
+            ]
+          }
+        }
+
+        {
+          "segment": [
+            0.22,
+            0.23
+          ],
+          "label": "none",
+          "holding_product": {
+            "possible_labels": [
+              "not holding product"
+            ]
+          },
+          "scan_light": {
+            "possible_labels": [
+              "scan light on"
+            ]
+          }
+        }
+
+        {
+          "segment": [
+            0.23,
+            0.25
+          ],
+          "label": "Redbull uten sukker",
+          "holding_product": {
+            "possible_labels": [
+              "hold product"
+            ]
+          },
+          "scan_light": {
+            "possible_labels": [
+              "scan light on"
+            ]
+          }
+        }
+
+        {
+          "segment": [
+            0.26,
+            0.27
+          ],
+          "label": "Redbull uten sukker",
+          "holding_product": {
+            "possible_labels": [
+              "hold product"
+            ]
+          },
+          "scan_light": {
+            "possible_labels": [
+              "scan light off"
+            ]
+          }
+        }
+
+        {
+          "segment": [
+            0.28,
+            0.28
+          ],
+          "label": "Redbull uten sukker",
+          "holding_product": {
+            "possible_labels": [
+              "hold product"
+            ]
+          },
+          "scan_light": {
+            "possible_labels": [
+              "scan light on"
+            ]
+          }
+        }
+
+        {
+          "segment": [
+            0.29,
+            0.30
+          ],
+          "label": "none",
+          "holding_product": {
+            "possible_labels": [
+              "not holding product"
+            ]
+          },
+          "scan_light": {
+            "possible_labels": [
+              "scan light on"
+            ]
+          }
+        }
+
+        {
+          "segment": [
+            0.31,
+            0.33
+          ],
+          "label": "Redbul med sukker",
+          "holding_product": {
+            "possible_labels": [
+              "hold product"
+            ]
+          },
+          "scan_light": {
+            "possible_labels": [
+              "scan light on"
+            ]
+          }
+        }
+
+        {
+          "segment": [
+            0.34,
+            0.36
+          ],
+          "label": "Redbul med sukker",
+          "holding_product": {
+            "possible_labels": [
+              "hold product"
+            ]
+          },
+          "scan_light": {
+            "possible_labels": [
+              "scan light off"
+            ]
+          }
+        }
+
+        {
+          "segment": [
+            0.37,
+            0.37
+          ],
+          "label": "Redbul med sukker",
+          "holding_product": {
+            "possible_labels": [
+              "hold product"
+            ]
+          },
+          "scan_light": {
+            "possible_labels": [
+              "scan light on"
+            ]
+          }
+        }
+
+        {
+          "segment": [
+            0.38,
+            0.39
+          ],
+          "label": "none",
+          "holding_product": {
+            "possible_labels": [
+              "not holding product"
+            ]
+          },
+          "scan_light": {
+            "possible_labels": [
+              "scan light on"
+            ]
+          }
+        }
+
+        {
+          "segment": [
+            0.40,
+            0.42
+          ],
+          "label": "Tine Mager Cottage Cheese Naturell 2.0% fett",
+          "holding_product": {
+            "possible_labels": [
+              "hold product"
+            ]
+          },
+          "scan_light": {
+            "possible_labels": [
+              "scan light on"
+            ]
+          }
+        }
+
+        {
+          "segment": [
+            0.43,
+            0.43
+          ],
+          "label": "Tine Mager Cottage Cheese Naturell 2.0% fett",
+          "holding_product": {
+            "possible_labels": [
+              "hold product"
+            ]
+          },
+          "scan_light": {
+            "possible_labels": [
+              "scan light off"
+            ]
+          }
+        }
+
+        {
+          "segment": [
+            0.44,
+            0.45
+          ],
+          "label": "Tine Mager Cottage Cheese Naturell 2.0% fett",
+          "holding_product": {
+            "possible_labels": [
+              "hold product"
+            ]
+          },
+          "scan_light": {
+            "possible_labels": [
+              "scan light on"
+            ]
+          }
+        }
+
+        {
+          "segment": [
+            0.46,
+            0.47
+          ],
+          "label": "none",
+          "holding_product": {
+            "possible_labels": [
+              "not holding product"
+            ]
+          },
+          "scan_light": {
+            "possible_labels": [
+              "scan light on"
+            ]
+          }
+        }
+
+        {
+          "segment": [
+            0.47,
+            0.48
+          ],
+          "label": "Gilde Ovnsbakt Leverpostei",
+          "holding_product": {
+            "possible_labels": [
+              "hold product"
+            ]
+          },
+          "scan_light": {
+            "possible_labels": [
+              "scan light on"
+            ]
+          }
+        }
+
+        {
+          "segment": [
+            0.49,
+            0.49
+          ],
+          "label": "Gilde Ovnsbakt Leverpostei",
+          "holding_product": {
+            "possible_labels": [
+              "hold product"
+            ]
+          },
+          "scan_light": {
+            "possible_labels": [
+              "scan light off"
+            ]
+          }
+        }
+
+        {
+          "segment": [
+            0.49,
+            0.50
+          ],
+          "label": "Gilde Ovnsbakt Leverpostei",
+          "holding_product": {
+            "possible_labels": [
+              "hold product"
+            ]
+          },
+          "scan_light": {
+            "possible_labels": [
+              "scan light on"
+            ]
+          }
+        }
+
+        {
+          "segment": [
+            0.51,
+            0.51
+          ],
+          "label": "none",
+          "holding_product": {
+            "possible_labels": [
+              "not holding product"
+            ]
+          },
+          "scan_light": {
+            "possible_labels": [
+              "scan light on"
+            ]
+          }
+        }
+
+        {
+          "segment": [
+            0.52,
+            0.53
+          ],
+          "label": "Tine Norvegia Original i skiver 300g 27%",
+          "holding_product": {
+            "possible_labels": [
+              "hold product"
+            ]
+          },
+          "scan_light": {
+            "possible_labels": [
+              "scan light on"
+            ]
+          }
+        }
+
+        {
+          "segment": [
+            0.54,
+            0.54
+          ],
+          "label": "Tine Norvegia Original i skiver 300g 27%",
+          "holding_product": {
+            "possible_labels": [
+              "hold product"
+            ]
+          },
+          "scan_light": {
+            "possible_labels": [
+              "scan light off"
+            ]
+          }
+        }
+
+        {
+          "segment": [
+            0.55,
+            0.55
+          ],
+          "label": "Tine Norvegia Original i skiver 300g 27%",
+          "holding_product": {
+            "possible_labels": [
+              "hold product"
+            ]
+          },
+          "scan_light": {
+            "possible_labels": [
+              "scan light on"
+            ]
+          }
+        }
+
+        {
+          "segment": [
+            0.56,
+            0.56
+          ],
+          "label": "none",
+          "holding_product": {
+            "possible_labels": [
+              "not holding product"
+            ]
+          },
+          "scan_light": {
+            "possible_labels": [
+              "scan light on"
+            ]
+          }
+        }
+
+        {
+          "segment": [
+            0.57,
+            0.58
+          ],
+          "label": "Gilde Ekte Kokt Skinke",
+          "holding_product": {
+            "possible_labels": [
+              "hold product"
+            ]
+          },
+          "scan_light": {
+            "possible_labels": [
+              "scan light on"
+            ]
+          }
+        }
+
+        {
+          "segment": [
+            0.59,
+            0.59
+          ],
+          "label": "Gilde Ekte Kokt Skinke",
+          "holding_product": {
+            "possible_labels": [
+              "hold product"
+            ]
+          },
+          "scan_light": {
+            "possible_labels": [
+              "scan light off"
+            ]
+          }
+        }
+
+        {
+          "segment": [
+            0.59,
+            0.59
+          ],
+          "label": "Gilde Ekte Kokt Skinke",
+          "holding_product": {
+            "possible_labels": [
+              "hold product"
+            ]
+          },
+          "scan_light": {
+            "possible_labels": [
+              "scan light on"
+            ]
+          }
+        }
+
+        {
+          "segment": [
+            1.00,
+            1.01
+          ],
+          "label": "none",
+          "holding_product": {
+            "possible_labels": [
+              "not holding product"
+            ]
+          },
+          "scan_light": {
+            "possible_labels": [
+              "scan light on"
+            ]
+          }
+        }
+
+        {
+          "segment": [
+            1.02,
+            1.02
+          ],
+          "label": "TINE yoghurt skogsbær 4x150g",
+          "holding_product": {
+            "possible_labels": [
+              "hold product"
+            ]
+          },
+          "scan_light": {
+            "possible_labels": [
+              "scan light on"
+            ]
+          }
+        }
+
+        {
+          "segment": [
+            1.03,
+            1.03
+          ],
+          "label": "TINE yoghurt skogsbær 4x150g",
+          "holding_product": {
+            "possible_labels": [
+              "hold product"
+            ]
+          },
+          "scan_light": {
+            "possible_labels": [
+              "scan light off"
+            ]
+          }
+        }
+
+        {
+          "segment": [
+            1.04,
+            1.05
+          ],
+          "label": "TINE yoghurt skogsbær 4x150g",
+          "holding_product": {
+            "possible_labels": [
+              "hold product"
+            ]
+          },
+          "scan_light": {
+            "possible_labels": [
+              "scan light on"
+            ]
+          }
+        }
+
+        {
+          "segment": [
+            1.05,
+            1.06
+          ],
+          "label": "none",
+          "holding_product": {
+            "possible_labels": [
+              "not holding product"
+            ]
+          },
+          "scan_light": {
+            "possible_labels": [
+              "scan light on"
+            ]
+          }
+        }
+
+        {
+          "segment": [
+            1.07,
+            1.08
+          ],
+          "label": "TINE Jarlsberg i skiver 27%",
+          "holding_product": {
+            "possible_labels": [
+              "hold product"
+            ]
+          },
+          "scan_light": {
+            "possible_labels": [
+              "scan light on"
+            ]
+          }
+        }
+
+        {
+          "segment": [
+            1.08,
+            1.08
+          ],
+          "label": "TINE Jarlsberg i skiver 27%",
+          "holding_product": {
+            "possible_labels": [
+              "hold product"
+            ]
+          },
+          "scan_light": {
+            "possible_labels": [
+              "scan light off"
+            ]
+          }
+        }
+
+        {
+          "segment": [
+            1.09,
+            1.09
+          ],
+          "label": "TINE Jarlsberg i skiver 27%",
+          "holding_product": {
+            "possible_labels": [
+              "hold product"
+            ]
+          },
+          "scan_light": {
+            "possible_labels": [
+              "scan light on"
+            ]
+          }
+        }
+
+        {
+          "segment": [
+            1.10,
+            1.11
+          ],
+          "label": "none",
+          "holding_product": {
+            "possible_labels": [
+              "not holding product"
+            ]
+          },
+          "scan_light": {
+            "possible_labels": [
+              "scan light on"
+            ]
+          }
+        }
+
+        {
+          "segment": [
+            1.12,
+            1.14
+          ],
+          "label": "Kaffe EVERGOOD filtermalt 500g",
+          "holding_product": {
+            "possible_labels": [
+              "hold product"
+            ]
+          },
+          "scan_light": {
+            "possible_labels": [
+              "scan light on"
+            ]
+          }
+        }
+
+        {
+          "segment": [
+            1.15,
+            1.16
+          ],
+          "label": "Kaffe EVERGOOD filtermalt 500g",
+          "holding_product": {
+            "possible_labels": [
+              "hold product"
+            ]
+          },
+          "scan_light": {
+            "possible_labels": [
+              "scan light off"
+            ]
+          }
+        }
+
+        {
+          "segment": [
+            1.17,
+            1.17
+          ],
+          "label": "Kaffe EVERGOOD filtermalt 500g",
+          "holding_product": {
+            "possible_labels": [
+              "hold product"
+            ]
+          },
+          "scan_light": {
+            "possible_labels": [
+              "scan light on"
+            ]
+          }
+        }
+
+        {
+          "segment": [
+            1.18,
+            1.18
+          ],
+          "label": "none",
+          "holding_product": {
+            "possible_labels": [
+              "not holding product"
+            ]
+          },
+          "scan_light": {
+            "possible_labels": [
+              "scan light on"
+            ]
+          }
+        }
+
+        {
+          "segment": [
+            1.19,
+            1.21
+          ],
+          "label": "PLACEHOLDER_LABEL",
           "holding_product": {
             "possible_labels": [
               "hold product",
@@ -22,6 +903,489 @@
             ]
           }
         }
+
+        {
+          "segment": [
+            0.0,
+            0.0
+          ],
+          "label": "PLACEHOLDER_LABEL",
+          "holding_product": {
+            "possible_labels": [
+              "hold product",
+              "not holding product"
+            ]
+          },
+          "scan_light": {
+            "possible_labels": [
+              "scan light on",
+              "scan light off"
+            ]
+          }
+        }
+
+        {
+          "segment": [
+            0.0,
+            0.0
+          ],
+          "label": "PLACEHOLDER_LABEL",
+          "holding_product": {
+            "possible_labels": [
+              "hold product",
+              "not holding product"
+            ]
+          },
+          "scan_light": {
+            "possible_labels": [
+              "scan light on",
+              "scan light off"
+            ]
+          }
+        }
+
+        {
+          "segment": [
+            0.0,
+            0.0
+          ],
+          "label": "PLACEHOLDER_LABEL",
+          "holding_product": {
+            "possible_labels": [
+              "hold product",
+              "not holding product"
+            ]
+          },
+          "scan_light": {
+            "possible_labels": [
+              "scan light on",
+              "scan light off"
+            ]
+          }
+        }
+
+        {
+          "segment": [
+            0.0,
+            0.0
+          ],
+          "label": "PLACEHOLDER_LABEL",
+          "holding_product": {
+            "possible_labels": [
+              "hold product",
+              "not holding product"
+            ]
+          },
+          "scan_light": {
+            "possible_labels": [
+              "scan light on",
+              "scan light off"
+            ]
+          }
+        }
+
+
+        {
+          "segment": [
+            0.0,
+            0.0
+          ],
+          "label": "PLACEHOLDER_LABEL",
+          "holding_product": {
+            "possible_labels": [
+              "hold product",
+              "not holding product"
+            ]
+          },
+          "scan_light": {
+            "possible_labels": [
+              "scan light on",
+              "scan light off"
+            ]
+          }
+        }
+
+        {
+          "segment": [
+            0.0,
+            0.0
+          ],
+          "label": "PLACEHOLDER_LABEL",
+          "holding_product": {
+            "possible_labels": [
+              "hold product",
+              "not holding product"
+            ]
+          },
+          "scan_light": {
+            "possible_labels": [
+              "scan light on",
+              "scan light off"
+            ]
+          }
+        }
+
+        {
+          "segment": [
+            0.0,
+            0.0
+          ],
+          "label": "PLACEHOLDER_LABEL",
+          "holding_product": {
+            "possible_labels": [
+              "hold product",
+              "not holding product"
+            ]
+          },
+          "scan_light": {
+            "possible_labels": [
+              "scan light on",
+              "scan light off"
+            ]
+          }
+        }
+
+        {
+          "segment": [
+            0.0,
+            0.0
+          ],
+          "label": "PLACEHOLDER_LABEL",
+          "holding_product": {
+            "possible_labels": [
+              "hold product",
+              "not holding product"
+            ]
+          },
+          "scan_light": {
+            "possible_labels": [
+              "scan light on",
+              "scan light off"
+            ]
+          }
+        }
+
+        {
+          "segment": [
+            0.0,
+            0.0
+          ],
+          "label": "PLACEHOLDER_LABEL",
+          "holding_product": {
+            "possible_labels": [
+              "hold product",
+              "not holding product"
+            ]
+          },
+          "scan_light": {
+            "possible_labels": [
+              "scan light on",
+              "scan light off"
+            ]
+          }
+        }
+
+        {
+          "segment": [
+            0.0,
+            0.0
+          ],
+          "label": "PLACEHOLDER_LABEL",
+          "holding_product": {
+            "possible_labels": [
+              "hold product",
+              "not holding product"
+            ]
+          },
+          "scan_light": {
+            "possible_labels": [
+              "scan light on",
+              "scan light off"
+            ]
+          }
+        }
+
+        {
+          "segment": [
+            0.0,
+            0.0
+          ],
+          "label": "PLACEHOLDER_LABEL",
+          "holding_product": {
+            "possible_labels": [
+              "hold product",
+              "not holding product"
+            ]
+          },
+          "scan_light": {
+            "possible_labels": [
+              "scan light on",
+              "scan light off"
+            ]
+          }
+        }
+
+        {
+          "segment": [
+            0.0,
+            0.0
+          ],
+          "label": "PLACEHOLDER_LABEL",
+          "holding_product": {
+            "possible_labels": [
+              "hold product",
+              "not holding product"
+            ]
+          },
+          "scan_light": {
+            "possible_labels": [
+              "scan light on",
+              "scan light off"
+            ]
+          }
+        }
+
+        {
+          "segment": [
+            0.0,
+            0.0
+          ],
+          "label": "PLACEHOLDER_LABEL",
+          "holding_product": {
+            "possible_labels": [
+              "hold product",
+              "not holding product"
+            ]
+          },
+          "scan_light": {
+            "possible_labels": [
+              "scan light on",
+              "scan light off"
+            ]
+          }
+        }
+
+        {
+          "segment": [
+            0.0,
+            0.0
+          ],
+          "label": "PLACEHOLDER_LABEL",
+          "holding_product": {
+            "possible_labels": [
+              "hold product",
+              "not holding product"
+            ]
+          },
+          "scan_light": {
+            "possible_labels": [
+              "scan light on",
+              "scan light off"
+            ]
+          }
+        }
+
+        {
+          "segment": [
+            0.0,
+            0.0
+          ],
+          "label": "PLACEHOLDER_LABEL",
+          "holding_product": {
+            "possible_labels": [
+              "hold product",
+              "not holding product"
+            ]
+          },
+          "scan_light": {
+            "possible_labels": [
+              "scan light on",
+              "scan light off"
+            ]
+          }
+        }
+
+        {
+          "segment": [
+            0.0,
+            0.0
+          ],
+          "label": "PLACEHOLDER_LABEL",
+          "holding_product": {
+            "possible_labels": [
+              "hold product",
+              "not holding product"
+            ]
+          },
+          "scan_light": {
+            "possible_labels": [
+              "scan light on",
+              "scan light off"
+            ]
+          }
+        }
+
+        {
+          "segment": [
+            0.0,
+            0.0
+          ],
+          "label": "PLACEHOLDER_LABEL",
+          "holding_product": {
+            "possible_labels": [
+              "hold product",
+              "not holding product"
+            ]
+          },
+          "scan_light": {
+            "possible_labels": [
+              "scan light on",
+              "scan light off"
+            ]
+          }
+        }
+
+        {
+          "segment": [
+            0.0,
+            0.0
+          ],
+          "label": "PLACEHOLDER_LABEL",
+          "holding_product": {
+            "possible_labels": [
+              "hold product",
+              "not holding product"
+            ]
+          },
+          "scan_light": {
+            "possible_labels": [
+              "scan light on",
+              "scan light off"
+            ]
+          }
+        }
+
+        {
+          "segment": [
+            0.0,
+            0.0
+          ],
+          "label": "PLACEHOLDER_LABEL",
+          "holding_product": {
+            "possible_labels": [
+              "hold product",
+              "not holding product"
+            ]
+          },
+          "scan_light": {
+            "possible_labels": [
+              "scan light on",
+              "scan light off"
+            ]
+          }
+        }
+
+        {
+          "segment": [
+            0.0,
+            0.0
+          ],
+          "label": "PLACEHOLDER_LABEL",
+          "holding_product": {
+            "possible_labels": [
+              "hold product",
+              "not holding product"
+            ]
+          },
+          "scan_light": {
+            "possible_labels": [
+              "scan light on",
+              "scan light off"
+            ]
+          }
+        }
+
+        {
+          "segment": [
+            0.0,
+            0.0
+          ],
+          "label": "PLACEHOLDER_LABEL",
+          "holding_product": {
+            "possible_labels": [
+              "hold product",
+              "not holding product"
+            ]
+          },
+          "scan_light": {
+            "possible_labels": [
+              "scan light on",
+              "scan light off"
+            ]
+          }
+        }
+
+        {
+          "segment": [
+            0.0,
+            0.0
+          ],
+          "label": "PLACEHOLDER_LABEL",
+          "holding_product": {
+            "possible_labels": [
+              "hold product",
+              "not holding product"
+            ]
+          },
+          "scan_light": {
+            "possible_labels": [
+              "scan light on",
+              "scan light off"
+            ]
+          }
+        }
+
+        {
+          "segment": [
+            0.0,
+            0.0
+          ],
+          "label": "PLACEHOLDER_LABEL",
+          "holding_product": {
+            "possible_labels": [
+              "hold product",
+              "not holding product"
+            ]
+          },
+          "scan_light": {
+            "possible_labels": [
+              "scan light on",
+              "scan light off"
+            ]
+          }
+        }
+
+        {
+          "segment": [
+            0.0,
+            0.0
+          ],
+          "label": "PLACEHOLDER_LABEL",
+          "holding_product": {
+            "possible_labels": [
+              "hold product",
+              "not holding product"
+            ]
+          },
+          "scan_light": {
+            "possible_labels": [
+              "scan light on",
+              "scan light off"
+            ]
+          }
+        }
+
+
       ],
       "video_url": "videos/Nesten alle varer sakte tempo 480P.mp4",
       "start": 0.0,
@@ -32,12 +1396,11 @@
     "Noen få enkle varer 480P.mp4": {
       "annotation": [
         {
-          "id": "001",
           "segment": [
             0.0,
             0.0
-          ], "label": "label",
-  
+          ],
+          "label": "PLACEHOLDER_LABEL",
           "holding_product": {
             "possible_labels": [
               "hold product",
@@ -61,12 +1424,11 @@
     "Noen få enkle varer 720P.mp4": {
       "annotation": [
         {
-          "id": "001",
           "segment": [
             0.0,
             0.0
-          ], "label": "label",
-
+          ],
+          "label": "PLACEHOLDER_LABEL",
           "holding_product": {
             "possible_labels": [
               "hold product",
@@ -90,12 +1452,11 @@
     "Noen få enkle varer 1080P.mp4": {
       "annotation": [
         {
-          "id": "001",
           "segment": [
             0.0,
             0.0
-          ], "label": "label",
-
+          ],
+          "label": "PLACEHOLDER_LABEL",
           "holding_product": {
             "possible_labels": [
               "hold product",
@@ -119,12 +1480,11 @@
     "Varer dobbelt 480P.mp4": {
       "annotation": [
         {
-          "id": "001",
           "segment": [
             0.0,
             0.0
-          ], "label": "label",
-
+          ],
+          "label": "PLACEHOLDER_LABEL",
           "holding_product": {
             "possible_labels": [
               "hold product",
@@ -148,12 +1508,11 @@
     "Varer med dobbelt opp 720P.mp4": {
       "annotation": [
         {
-          "id": "001",
           "segment": [
             0.0,
             0.0
-          ], "label": "label",
-
+          ],
+          "label": "PLACEHOLDER_LABEL",
           "holding_product": {
             "possible_labels": [
               "hold product",
@@ -177,12 +1536,11 @@
     "Varer med dobbelt opp 1080P.mp4": {
       "annotation": [
         {
-          "id": "001",
           "segment": [
             0.0,
             0.0
-          ], "label": "label",
-
+          ],
+          "label": "PLACEHOLDER_LABEL",
           "holding_product": {
             "possible_labels": [
               "hold product",
