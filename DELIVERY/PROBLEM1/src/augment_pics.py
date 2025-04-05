@@ -1,4 +1,4 @@
-﻿import os
+import os
 import cv2
 import albumentations as A
 
@@ -20,8 +20,9 @@ for dir_path in [IMG_DIR, LABEL_DIR, AUG_IMG_DIR, AUG_LABEL_DIR]:
 augmentor = A.Compose([
     A.HorizontalFlip(p=0.5),
     A.RandomBrightnessContrast(p=0.3),
-    A.ShiftScaleRotate(shift_limit=0.05, scale_limit=0.1, rotate_limit=10, p=0.5),
-    
+    A.ShiftScaleRotate(shift_limit=0.05, scale_limit=0.2, rotate_limit=20, p=0.5),
+    A.MotionBlur(p=0.3),
+    A.Affine(scale=(0.8, 1.2), shear=(-0.1, 0.1), rotate=(-10, 10), p=0.3)git
 ],
     bbox_params=A.BboxParams(
         format='yolo',        # YOLO format: [class, x_center, y_center, w, h]
