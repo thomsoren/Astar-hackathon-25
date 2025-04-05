@@ -5,6 +5,8 @@ data/
 
 venv/
 
+__pycache__/
+
 data/yolo_dataset/
 
 runs/
